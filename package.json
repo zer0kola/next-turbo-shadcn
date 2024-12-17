@@ -1,0 +1,25 @@
+{
+  "name": "project",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "release": "turbo run build --filter=docs^..."
+  },
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.0.3",
+    "@repo/tsconfig": "workspace:*",
+    "turbo": "latest"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write \"**/*.{ts,tsx,md}\" --ignore-unknown"
+  },
+  "packageManager": "pnpm@9.1.1",
+  "dependencies": {}
+}
